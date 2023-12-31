@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.heading{
+    margin: 10vh 0 0 5vw;
+    font-size: 1.5rem;
+    font-weight: 800;
+    font-family: 'Cambon';
+}
+.about-us-img {
+    width: 30vw;
+    height: 20vw;
+}
+.content {
+    margin: 5vh 5vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.text {
+    width: 50%;
+    font-size: 1em;
+    font-weight: 300;
+    font-family: 'Poppins';
+    color: var(--text-black);
+}
+.cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.line-between {
+    height: 12vh;
+    border: 1px solid var(--text-content);
+}
+.card-head {
+    font-size: 5em;
+    font-family: 'Poppins';
+    font-weight: 800;
+    color: var(--text-highlight);
+}
+.card-body {
+    font-size: 1.25em;
+    font-family: 'Poppins';
+    font-weight: 600;
+    color: #D4AF37;
+}

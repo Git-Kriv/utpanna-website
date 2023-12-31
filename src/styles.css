@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url(./assets/fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Cambon';
+    src: url(./assets/fonts/Cambon-Regular.ttf);
+}
+
+:root {
+    --text-content:#959595;
+    --text-grey:#707070;
+    --text-black:#2E2E2E;
+    --heading:#121212;
+    --border:#E8E8E8;
+    --text-highlight:#850101;
+
+}

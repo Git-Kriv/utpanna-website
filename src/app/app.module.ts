@@ -14,6 +14,9 @@ import { OurPresenceComponent } from './home/our-presence/our-presence.component
 import { ServiceComponent } from './home/service/service.component';
 import { WorkComponent } from './home/work/work.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { OurWorkComponent } from './our-work/our-work.component';
+import { ProjectsComponent } from './our-work/projects/projects.component';
+import { ContactComponent } from './home/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { NavbarComponent } from './navbar/navbar.component';
     ServiceComponent,
     ArticleComponent,
     AboutUsComponent,
-    OurPresenceComponent    
+    OurPresenceComponent,
+    OurWorkComponent,
+    ProjectsComponent,
+    ContactComponent    
   ],
   imports: [
     BrowserModule,

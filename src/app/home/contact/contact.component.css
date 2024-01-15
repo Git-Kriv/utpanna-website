@@ -1,0 +1,88 @@
+
+.banner {
+    margin: 10vh;
+    padding: 5vh 2.5vw;
+    display: flex;
+    flex-direction: row;
+    background-color: #FFFAFA;
+    border-radius: 20px;
+    justify-content: space-around;
+    align-items: center;
+}
+.banner-text {
+    display: flex;
+    flex-direction: column;
+}
+.banner-head {
+    font-size: 2em;
+    font-family: 'Poppins';
+    font-weight: 600;
+    color: var(--text-highlight);
+}
+.banner-body {
+    margin-top: 5px;
+    font-size: 1em;
+    font-family: 'Poppins';
+    font-weight: 300;
+    color: var(--text-black);
+}
+.banner-btn {
+    height: fit-content;
+    padding: 1.5vh 1.5vw;
+    border: 2px solid var(--text-highlight);
+    border-radius: 10px;
+    font-family: 'Poppins';
+    font-size: 1em;
+    font-weight: 600;
+    color: var(--text-highlight);
+    background-color: #fff;
+    cursor: pointer;
+}
+
+
+.cards {
+    margin: 0 10vw 4em 10vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.card {
+    width: 15vw;
+}
+.card-image {
+    height: 10vh;
+}
+.card-head {
+    margin: 4vh 0 2vh 0;
+    font-size: 1.2rem;
+    font-family: 'Poppins';
+    font-weight: 600;
+    color: var(--heading);
+}
+.card-body {
+    font-size: 1rem;
+    font-family: 'Poppins';
+    font-weight: 400;
+    color: var(--text-grey);
+}
+
+@media only screen and (orientation:portrait){
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        width: 80vw;
+        text-align: center;
+    }
+    
+    .banner {
+        flex-direction: column;
+        margin: 10vh 2vh;
+        display: grid;
+    }
+    .banner-btn {
+        justify-self: flex-end;
+        margin-top: 2em;
+    }
+}

@@ -88,3 +88,51 @@
 .image {
     width: 80%;
 }
+
+@media only screen and (orientation:portrait) {
+   .container {
+    flex-direction: column-reverse;
+    height: max-content;
+   } 
+   .text {
+        width: 100%;
+   }
+   .heading {
+    margin: .5em 7.5vw .5em 5vw;
+    font-size: 3em;
+    }
+    .subheading {
+        width: 80%;
+        font-size: .75em;
+        color: var(--text-black);
+    }
+    .button-container {
+        width: 80%;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .button {
+        padding: 12.5px 20px;
+        margin-top: 4vh;
+        font-size: 0.8em;
+    }
+    .grid{
+        position: absolute;
+        top: 75vh;
+        left: 0;
+        width: 80vw;
+    }
+
+
+   .img-container{
+    margin-top: 2.5em;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    .image {
+        width: 80%;
+    }
+    
+}

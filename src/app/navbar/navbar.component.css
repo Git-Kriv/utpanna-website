@@ -8,6 +8,9 @@
     box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
     z-index: 10;
 }
+.mob-navbar {
+    display: none;
+}
 .logo {
     width: 9vw;
     margin-left: 4vw;
@@ -64,4 +67,31 @@
 .icons {
     margin: 0 0.5vw;
     cursor: pointer;
+}
+
+
+@media only screen and (orientation: portrait) {
+    .navbar {
+        display: none;
+    }
+    .mob-navbar {
+        top: 0;
+        height: 7.5vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
+        z-index: 10;
+    }
+
+    .hamburg {
+        width: 10px;
+        background: red;
+    }
+
+    .nav-items {
+        flex-direction: column;
+    }
 }

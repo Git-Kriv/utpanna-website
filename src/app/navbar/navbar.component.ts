@@ -9,6 +9,8 @@ import { NavigateService } from 'src/helpers/navigate.service';
 })
 export class NavbarComponent implements OnInit {
 
+  landscape: boolean = true;
+
   prevPage:string = "Home";
 
   linkedinURL: string = "../../assets/navbar/linkedin-in.svg";
@@ -22,7 +24,27 @@ export class NavbarComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    document.getElementById("Home")!.classList.add("selected");
+    console.log(this.landscape);
+    
+    if(innerWidth/innerHeight <1){
+      this.landscape = false;
+      console.log("landscape: ", this.landscape);
+      
+    }
+
+    var url = this.router.url;
+    
+    switch(url){
+      case '/home': 
+        document.getElementById("Home")!.classList.add("selected");
+        break;
+      case '/work':
+        document.getElementById("Work")!.classList.add("selected");
+        break;
+      case '/contact':
+        document.getElementById("Contact")!.classList.add("selected");
+        break;
+    }
   }
 
   navigate(page:string){

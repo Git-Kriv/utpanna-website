@@ -24,7 +24,6 @@ export class HomeComponent implements OnInit {
 
   inFocus(e:string){
     let ele = document.getElementById("Work");  
-    console.log(ele);
     this.scrollInto(ele!);
   }
   scrollInto(ele:HTMLElement){

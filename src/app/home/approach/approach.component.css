@@ -5,7 +5,7 @@
 
 .heading {
     margin: 10vh 0 0 5vw;
-    font-size: 1.5rem;
+    font-size: 1.5em;
     font-weight: 800;
     font-family: 'Cambon';
 }
@@ -65,4 +65,32 @@
     left: -5vw;
     width: 40vw;
     position: relative;
-} 
+}
+
+
+@media only screen and (orientation:portrait) {
+.heading {
+    margin: 7.5em 0 0 5vw;
+}
+.description {
+    margin: 5vh 0 0 5vw;
+    font-size: 1em;
+}
+
+
+.cards {
+    margin:0;   
+    flex-direction: column;
+}
+.card {
+    width: 80vw;
+    margin: 2.5vh 5vw;
+}
+.card-text {
+    margin: 2.5vh 0 0 0;
+}
+.card .description {
+    font-size: 1em;
+}
+    
+}

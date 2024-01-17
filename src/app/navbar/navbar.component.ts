@@ -33,7 +33,7 @@ export class NavbarComponent implements OnInit {
     }
 
     var url = this.router.url;
-    
+    document.getElementById(this.prevPage)!.classList.remove("selected");
     switch(url){
       case '/home': 
         document.getElementById("Home")!.classList.add("selected");
@@ -45,6 +45,12 @@ export class NavbarComponent implements OnInit {
         document.getElementById("Contact")!.classList.add("selected");
         break;
     }
+  }
+
+  toggleMenu(){
+    document.getElementById("mob-logo")!.classList.toggle("hide");
+    document.getElementById("menu")!.classList.toggle("show");
+    document.getElementById("hamburg")!.classList.toggle("hide");
   }
 
   navigate(page:string){

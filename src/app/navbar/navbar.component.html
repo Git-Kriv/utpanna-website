@@ -36,39 +36,52 @@
 </div>
 
 <div class="mob-navbar">
-    <img class="logo" src="../../assets/navbar/logo.png" alt="Logo">
-    <div class="hamburg"></div>
-    <!-- <div class="nav-items">
-        <div class="nav-item" id="Home" (click)="redirect('Home')">
-            <div class="nav-item-box">
-                Home
-            </div>
+    <div id="mob-logo" class="mob-nav">
+        <img class="logo" src="../../assets/navbar/logo.png" alt="Logo">
+        <div id="hamburg" (click)="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
         </div>
-        <div class="nav-item" id="Work" (click)="redirect('Work')">
-            <div class="nav-item-box">
-                Work
+    </div>
+    
+
+    <div id="menu" class="menu" (click)="toggleMenu()">
+        <div class="menu-flex">
+            <img class="cross" src="../../assets/navbar/cross.svg" alt="">
+            <div class="nav-items">
+                <div class="nav-item" id="Home" (click)="redirect('Home')">
+                    <div class="nav-item-box">
+                        Home
+                    </div>
+                </div>
+                <div class="nav-item" id="Work" (click)="redirect('Work')">
+                    <div class="nav-item-box">
+                        Work
+                    </div>
+                </div>
+                <div class="nav-item" id="Blog" (click)="navigate('Blog')">
+                    <div class="nav-item-box">
+                        Blog
+                    </div>
+                </div>
+                <div class="nav-item" id="About-us" (click)="navigate('About-us')">
+                    <div class="nav-item-box">
+                        About us
+                    </div>
+                </div>
+                <div class="nav-item" id="Contact" (click)="redirect('Contact')">
+                    <div class="nav-item-box">
+                        Contact
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="nav-item" id="Blog" (click)="navigate('Blog')">
-            <div class="nav-item-box">
-                Blog
-            </div>
-        </div>
-        <div class="nav-item" id="About-us" (click)="navigate('About-us')">
-            <div class="nav-item-box">
-                About us
-            </div>
-        </div>
-        <div class="nav-item" id="Contact" (click)="redirect('Contact')">
-            <div class="nav-item-box">
-                Contact
+            <div class="social-media">
+                <a class="icons" href="https://www.linkedin.com/"><img (mouseenter)="hoverIn('linkedin')" (mouseleave)="hoverOut('linkedin')" src={{linkedinURL}}></a>
+                <a class="icons" href="https://www.twitter.com/"><img (mouseenter)="hoverIn('twitter')" (mouseleave)="hoverOut('twitter')" src={{twitterURL}}></a>
+                <a class="icons" href="https://www.facebook.com/"><img (mouseenter)="hoverIn('fb')" (mouseleave)="hoverOut('fb')" src={{fbURL}}></a>
+                <a class="icons" href="https://www.instagram.com/"><img (mouseenter)="hoverIn('insta')" (mouseleave)="hoverOut('insta')" src={{instaURL}}></a>
             </div>
         </div>
     </div>
-    <div class="social-media">
-        <a class="icons" href="https://www.linkedin.com/"><img (mouseenter)="hoverIn('linkedin')" (mouseleave)="hoverOut('linkedin')" src={{linkedinURL}}></a>
-        <a class="icons" href="https://www.twitter.com/"><img (mouseenter)="hoverIn('twitter')" (mouseleave)="hoverOut('twitter')" src={{twitterURL}}></a>
-        <a class="icons" href="https://www.facebook.com/"><img (mouseenter)="hoverIn('fb')" (mouseleave)="hoverOut('fb')" src={{fbURL}}></a>
-        <a class="icons" href="https://www.instagram.com/"><img (mouseenter)="hoverIn('insta')" (mouseleave)="hoverOut('insta')" src={{instaURL}}></a>
-    </div> -->
 </div>

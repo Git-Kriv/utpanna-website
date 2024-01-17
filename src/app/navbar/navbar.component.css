@@ -1,12 +1,15 @@
 .navbar {
     top: 0;
     height: 7.5vh;
+    width: 100vw;
     display: flex;
+    position: fixed;
+    background-color: #fff;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
-    z-index: 10;
+    z-index: 10;   
 }
 .mob-navbar {
     display: none;
@@ -75,23 +78,83 @@
         display: none;
     }
     .mob-navbar {
+        display: flex;
         top: 0;
         height: 7.5vh;
         width: 100vw;
+        position: fixed;
+        background-color: #fff;
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
+        z-index: 10;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center
+    }
+    .cross {
+        width: 1.5em;
+        margin: 4vw;
+    }
+    .mob-nav {
+        width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
-        z-index: 10;
+    }
+    .logo {
+        width: 30vw;
+        margin-left: 4vw;
+    }
+    .mob-menu-logo {
+        width: 3vw;
+        margin-left: 4vw;
     }
 
-    .hamburg {
-        width: 10px;
-        background: red;
+    #hamburg {
+        margin: 0 4vw;
+        width: 15px;
+        height: 12.5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .line {
+        height: 0;
+        width: 100%;
+        border: 1.5px solid var(--text-highlight);
+    }
+    .menu {
+        margin-top: 92.5vh;
+        display: none;
+        width: 100vw;
+        height: 100vh;
+        z-index: 10;
+        justify-content: flex-end;
+        background-color: rgba(76,76,76,0.5);
+    }
+    .menu-flex {
+        width: 60vw;
+        height: 100vh;
+        background-color: #fff;
+        border-radius: 10px 0 0 10px;
+        opacity: 1;
+    }
+    .show{
+        display: flex;
+    }
+    .hide{
+        display: none;
     }
 
     .nav-items {
         flex-direction: column;
+    }
+    .nav-item {
+        margin: 2vh 4vw;
+    }
+    .social-media {
+        margin:2vh 4vw;
+        width: 60%;
     }
 }

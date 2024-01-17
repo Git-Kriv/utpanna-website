@@ -91,6 +91,7 @@
 
 @media only screen and (orientation:portrait) {
    .container {
+    margin-top: 7.5vh;
     flex-direction: column-reverse;
     height: max-content;
    } 

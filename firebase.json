@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "udw",
     "public": "dist/utpanna-website",
     "ignore": [
       "firebase.json",

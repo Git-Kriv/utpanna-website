@@ -3,22 +3,24 @@
         Articles
     </div>
     <div class="cards">
-        <img class="arrow-left" src="../../../assets/arrows/left-dark.svg" alt="">
-        <div class="card-up">
-            <div class="card">
-                <div class="card-head">Economic Times</div>
-                <div class="card-desc">Lorem ipsum dolor sit amet, cons jhes Jsxnsc</div>
-                <div class="card-link">Go to article</div>
+        <img class="arrow-left" src="../../../assets/arrows/left-dark.svg" alt="" (click)="prevPage()">
+        <div id="articles">
+            <div class="card-up">
+                <div class="card-up-pos card">
+                    <div class="card-head">{{article1.news_agency}}</div>
+                    <div class="card-desc">{{article1.title}}</div>
+                    <div class="card-link" (click)="goTo(article1.link)">Go to article</div>
+                </div>
+            </div>
+            <div class="card-down">
+                <div class="card card-down-pos">
+                    <div class="card-head">{{article2.news_agency}}</div>
+                    <div class="card-desc">{{article2.title}}</div>
+                    <div class="card-link" (click)="goTo(article2.link)">Go to article</div>
+                </div>
             </div>
         </div>
-        <div class="card-down">
-            <div class="card">
-                <div class="card-head">Lorem, ipsum.</div>
-                <div class="card-desc">Lorem100</div>
-                <div class="card-link">Go to article</div>
-            </div>
-        </div>
-        <img class="arrow-right" src="../../../assets/arrows/right-dark.svg" alt="">
+        <img class="arrow-right" src="../../../assets/arrows/right-dark.svg" alt="" (click)="nextPage()">
     </div>
 </div>
 

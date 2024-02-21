@@ -5,29 +5,38 @@
         From scaling startups to established enterprise, we help product teams tackle their most complex UX challenges
     </div>
     <div class="flex-menu">
-        <div class="item">All</div>
-        <div class="item">Transportation design</div>
-        <div class="item">Industrial design</div>
-        <div class="item">Retail space design</div>
-        <div class="item">Packaging design</div>
-        <div class="item">Branding & Identity design</div>
-        <div class="item">UI/UX design</div>
+        <div class="item" (click)="filter('All')" id="All">All</div>
+        <div class="item" (click)="filter('Transportation')" id="Transportation">Transportation Design</div>
+        <div class="item" (click)="filter('Industrial')" id="Industrial">Industrial Design</div>
+        <div class="item" (click)="filter('Retail')" id="Retail">Retail Space Design</div>
+        <div class="item" (click)="filter('Packaging')" id="Packaging">Packaging Design</div>
+        <div class="item" (click)="filter('Branding')" id="Branding">Branding & Identity Design</div>
+        <div class="item" (click)="filter('UI/UX')" id="UI/UX">UI/UX Design</div>
 
     </div>
-    <div class="products">
-        <div class="product">
+    <div class="products" *ngFor="let p of projects index as i">
+        <div class="product" *ngIf="i%2 == 0">
             <div class="content">
-                <div class="product-title">Automobile design</div>
-                <div class="product-desc">Lam tempor invidunam.</div>
-                <div class="product-info">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero nisi doloremque possimus, quos fuga velit dignissimos rerum corrupti voluptatum illo quaerat ad dicta aperiam, exercitationem laboriosam eligendi delectus porro recusandae a? Odio, mollitia enim nesciunt, sapiente, suscipit accusamus accusantium repellendus quo facere vero consequuntur nemo voluptates porro pariatur! Optio exercitationem voluptas suscipit delectus. Labore molestias molestiae voluptatem eveniet, exercitationem sit ut assumenda repellendus tempora laboriosam autem sed, quisquam quasi eos officiis doloremque illo qui! Accusantium tenetur rerum aperiam, dolor eum blanditiis quam nisi nostrum quo culpa asperiores voluptate facilis cupiditate in odit! Ratione velit natus ipsa ullam quasi perferendis quos
-                </div>
-                <div class="product-link">Find out more</div>
+                <div class="product-title">{{p.category}}</div>
+                <div class="product-desc">{{p.title}}</div>
+                <div class="product-info">{{p.context}}</div>
+                <div class="product-link" (click)="goToProject(p.id)">Find out more</div>
             </div>
-            <img class="product-img" src="../../assets/work/Mask Group 10.png" alt="">
+            <img class="product-img-right" src="http://192.168.0.104:8000{{p.short_image1}}" alt="">
         </div>
-
+        <div class="product" *ngIf="i%2 != 0">
+            <img class="product-img-left" src="{{p.short_image1}}" alt="">
+            <div class="content">
+                <div class="product-title">{{p.category}}</div>
+                <div class="product-desc">{{p.title}}</div>
+                <div class="product-info">{{p.context}}</div>
+                <div class="product-link" (click)="goToProject(p.id)">Find out more</div>
+            </div>
+        </div>
     </div>
+</div>
+<div class="load-btn">
+    <button *ngIf="prevSel == 'All'" class="banner-btn" (click)="loadMore()">Load More Projects</button>
 </div>
 <app-contact></app-contact>
 <app-footer></app-footer>

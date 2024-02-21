@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { DataService } from 'src/helpers/data.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
@@ -8,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AboutUsComponent } from './home/about-us/about-us.component';
 import { ApproachComponent } from './home/approach/approach.component';
 import { ArticleComponent } from './home/article/article.component';
+import { ContactComponent } from './home/contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { LandingComponent } from './home/landing/landing.component';
 import { OurPresenceComponent } from './home/our-presence/our-presence.component';
@@ -16,7 +19,6 @@ import { WorkComponent } from './home/work/work.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { OurWorkComponent } from './our-work/our-work.component';
 import { ProjectsComponent } from './our-work/projects/projects.component';
-import { ContactComponent } from './home/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -34,13 +36,17 @@ import { ContactComponent } from './home/contact/contact.component';
     OurPresenceComponent,
     OurWorkComponent,
     ProjectsComponent,
-    ContactComponent    
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    HttpClient,
+    DataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

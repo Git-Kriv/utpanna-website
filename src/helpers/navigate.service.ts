@@ -11,6 +11,7 @@ export class NavigateService {
   private subject = new BehaviorSubject<any>(null);
   sendPage(e: any) {
     this.subject.next(e);
+    
   }
   getClickEvent(): Observable<any>{ 
     return this.subject.asObservable();

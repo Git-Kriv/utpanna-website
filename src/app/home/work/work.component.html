@@ -15,52 +15,51 @@
                     <div class="numb-highlight">1/</div>
                     <div class="numb-normal">1</div>
                 </div>
-            </div>
-            
+            </div>    
         </div>
+
         <div class="menu">
-            <div class="menu-item">
-                <div class="item-text">
-                     Transportation design
+            <div class="menu-item" (click)="select('Transportation')">
+                <div id="Transportation" class="item-text">
+                    Transportation design
                 </div>
-                <img class="sel-circle" src="../../../assets/arrows/circle.svg" alt="">
-                <!-- <div class="circle"></div> -->
+                <img *ngIf="cat.Transportation" class="sel-circle" src="../../../assets/arrows/circle.svg" alt="">
+                <div *ngIf="!cat.Transportation" class="circle"></div>
             </div>
-            <div class="menu-item">
-                <div class="item-text">
+            <div class="menu-item" (click)="select('Industrial')">
+                <div id="Industrial" class="item-text">
                     Industrial design
                </div>
-               <div class="circle"></div>
+               <img *ngIf="cat.Industrial" class="sel-circle" src="../../../assets/arrows/circle.svg" alt="">
+               <div *ngIf="!cat.Industrial" class="circle"></div>
             </div>
-            <div class="menu-item">
-                <div class="item-text">
+            <div class="menu-item" (click)="select('Retail')">
+                <div id="Retail" class="item-text">
                     Retail space design
                 </div>
-               <div class="circle"></div>
+                <img *ngIf="cat.Retail" class="sel-circle" src="../../../assets/arrows/circle.svg" alt="">
+                <div *ngIf="!cat.Retail" class="circle"></div>
             </div>
-            <div class="menu-item">
-                <div class="item-text">
+            <div class="menu-item" (click)="select('Branding')">
+                <div id="Branding" class="item-text">
                     Branding & Identity design
                 </div>
-               <div class="circle"></div>
+                <img *ngIf="cat.Branding" class="sel-circle" src="../../../assets/arrows/circle.svg" alt="">
+                <div *ngIf="!cat.Branding" class="circle"></div>
             </div>
-            <div class="menu-item">
-                <div class="item-text">
+            <div class="menu-item" (click)="select('Packaging')">
+                <div id="Packaging" class="item-text">
                     Packaging design
                 </div>
-               <div class="circle"></div>
+                <img *ngIf="cat.Packaging" class="sel-circle" src="../../../assets/arrows/circle.svg" alt="">
+                <div *ngIf="!cat.Packaging" class="circle"></div>
             </div>
-            <div class="menu-item">
-                <div class="item-text">
-                    Branding & Identity design
-                </div>
-               <div class="circle"></div>
-            </div>
-            <div class="menu-item">
-                <div class="item-text">
-                    UI UX design
+            <div class="menu-item" (click)="select('UI')">
+                <div id="UI" class="item-text">
+                    UI/UX design
                </div>
-               <div class="circle"></div>
+               <img *ngIf="cat.UI" class="sel-circle" src="../../../assets/arrows/circle.svg" alt="">
+               <div *ngIf="!cat.UI" class="circle"></div>
             </div>
         </div>
 

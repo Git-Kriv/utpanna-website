@@ -1,35 +1,33 @@
 <app-navbar></app-navbar>
 <div class="container">
-    <div class="title">Electric vehicles</div>
-    <div class="head">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod</div>
-    <img class="img-work" src="../../../assets/work/Mask Group 2.png" alt="">
+    <div class="title">{{project.category}}</div>
+    <div class="head">{{project.title}}</div>
+    <img class="img-work" src="http://192.168.0.104:8000{{project.long_image1}}" alt="">
     <div class="info-flex">
         <div class="row">
-           <div class="bold">Client</div>Client name
-           <div class="bold">Service</div>Product Design
+           <div class="bold">Client</div>{{project.client}}
+           <div style="left: 10vw;" class="bold">Service</div>{{project.service}}
         </div>
         <div class="row">
-            <div class="bold">Date</div>August 21
-            <div class="bold">Country</div>India
+            <div class="bold">Date</div>{{project.date | date: 'dd/MM/yyyy'}}
+            <div style="left: 10vw;" class="bold">Country</div>{{project.country}}
         </div>
         <div class="row">
-            <div class="bold">Duration</div> 
+            <div class="bold">Duration</div>{{project.duration}}
         </div>
         <div class="row">
-            <div class="bold">Context</div> 
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum suscipit necessitatibus laudantium exercitationem expedita! Nobis voluptatibus sequi sit soluta laborum itaque, dolorum harum in distinctio, minus omnis impedit nisi nesciunt.
+            <div class="bold">Context</div>{{project.context}}
         </div>
         <div class="images">
-            <img class="img" src="../../../assets/work/Mask Group 9.png" alt="" srcset="">
-            <img class="img" src="../../../assets/work/Mask Group 10.png" alt="" srcset="">
+            <img class="img" src="http://192.168.0.104:8000{{project.short_image1}}" alt="" srcset="">
+            <img class="img" src="http://192.168.0.104:8000{{project.short_image2}}" alt="" srcset="">
         </div>
         <div class="row">
-            <div class="bold">Our Approach</div>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam nostrum eligendi accusamus. Corrupti atque cum iure pariatur quod harum porro earum dolore incidunt neque, distinctio eaque expedita eum temporibus quae.
+            <div class="bold">Our Approach</div>{{project.approach}}
         </div>
     </div>
     
-    <img class="img-work" src="../../../assets/work/Mask Group 11.png" alt="" srcset="">
+    <img class="img-work" src="http://192.168.0.104:8000{{project.long_image2}}" alt="" srcset="">
 </div>
 <app-contact></app-contact>
 <app-footer></app-footer>

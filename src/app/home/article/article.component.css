@@ -19,9 +19,17 @@
     flex-direction: row;
     justify-content: space-between;
 }
+
+#articles {
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
 .arrow-left {
     position: relative;
-    left: -7.5vw;
+    left: -4.5vw;
     cursor: pointer;
     width: 3vw;
 } 
@@ -64,6 +72,7 @@
     font-weight: 700;
     color: #876A26;
     margin: 20px 0;
+    text-overflow: ellipsis;
 }
 .card-down .card-desc {
     font-size: 2em;
@@ -71,6 +80,7 @@
     font-weight: 700;
     color: #850101;
     margin: 20px 0;
+    text-overflow: ellipsis;
 }
 .card-link {
     font-size: 0.8em;
@@ -79,6 +89,17 @@
     color: var(--text-grey);
     text-align: end;
     bottom: 10px;
+    cursor: pointer;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: .5s;
+}
+  
+@keyframes fade {
+    from {opacity: 0} 
+    to {opacity: 1}
 }
 
 @media only screen and (orientation:portrait) {

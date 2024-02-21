@@ -106,6 +106,13 @@
         width: 30vw;
         margin-left: 4vw;
     }
+    .menu-logo {
+        top: 1vh;
+        left: 4vw;
+        position: fixed;
+        width: 30vw;
+        opacity: 0.5;
+    }
     .mob-menu-logo {
         width: 3vw;
         margin-left: 4vw;

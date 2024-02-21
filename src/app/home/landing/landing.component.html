@@ -1,14 +1,14 @@
 <div class="container">
     <div class="text">
         <div class="heading">
-            We're a Product design firm
+            We're {{varText}} <br> design firm
         </div>
         <div class="subheading">
-            We work with startups to multinational companies with a vision
-            to make <br> stunning products that enrich people's lives.
+            We collaborate with startups as well as multinational companies, 
+            all sharing a common vision: to create remarkable products that enhance the lives of people.
         </div>
         <div class="button-container">
-            <button class="button">
+            <button class="button" (click)="redirect('contact')">
                 Let's get started 
                 <img class="arrow" src="../../../assets/landing/arrow.png" alt="" srcset="">
             </button>

@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "udw",
+    "site": "kriv-utpannadesignworks",
     "public": "dist/utpanna-website",
     "ignore": [
       "firebase.json",

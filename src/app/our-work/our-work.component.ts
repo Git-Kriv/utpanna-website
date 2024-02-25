@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 import { API } from 'src/helpers/api';
 import { DataService } from 'src/helpers/data.service';
 import { project, projectList } from 'src/helpers/interfaces';
@@ -16,6 +17,8 @@ export class OurWorkComponent implements OnInit {
   prevSel:string = 'All';
   nextPage:number = 1;
 
+  HOST = environment.HOST;
+
   constructor(
     private dataService:DataService,
     private router: Router,
@@ -30,12 +33,13 @@ export class OurWorkComponent implements OnInit {
     document.getElementById('All')?.classList.add('selected');
     this.dataService.FireGET<projectList>(API.ProjectAll).subscribe({
       next:(res) => {
-        this.nextPage++;
-        console.log(res.results[0]);
-        
+        this.nextPage++;        
         for (let i = 0; i < res.results.length; i++) {
+          res.results[i].short_image1 = this.HOST + res.results[i].short_image1;
           this.projects.push(res.results[i]);
         }
+        console.log(this.projects[0]);
+        
       },
       error:(e) => console.log(e),
       complete:() => console.log('complete')

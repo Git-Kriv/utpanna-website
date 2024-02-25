@@ -15,10 +15,10 @@ export class project {
     country!:string  
     context!:string  
     approach!:string
-    long_image1!:URL
-    short_image1!:URL
-    long_image2!:URL
-    short_image2!:URL   
+    long_image1!:string
+    short_image1!:string
+    long_image2!:string
+    short_image2!:string   
 }
 
 export class projectList {
@@ -28,6 +28,12 @@ export class projectList {
     results!:project[]
 } 
 
+export class emailFields {
+    name!:string
+    email!:string
+    company!:string
+    requirements!:string
+}
 
 export class selCategory {
     Transportation: boolean = false

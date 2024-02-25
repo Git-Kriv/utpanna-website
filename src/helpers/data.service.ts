@@ -1,13 +1,16 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { Observable } from "rxjs";
+import { environment } from "src/environments/environment";
 import {
     article,
     project
 } from './interfaces';
-const HOST = 'http://192.168.0.104:8000/';
 
+const HOST = environment.HOST;
+
+const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
 @Injectable()
 export class DataService {
 
@@ -24,5 +27,8 @@ export class DataService {
     }
     FireGETP<T>(uri:string, params:any):Observable<T>{
         return this.http.get<T>(HOST+uri,{params})
+    }
+    FirePOST<T>(uri:string, body:any):Observable<T>{
+        return this.http.post<T>(HOST+uri,body, {headers:headers})
     }
 }

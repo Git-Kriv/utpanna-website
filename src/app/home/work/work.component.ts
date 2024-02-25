@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 import { API } from 'src/helpers/api';
 import { DataService } from 'src/helpers/data.service';
 import { project, projectList, selCategory } from 'src/helpers/interfaces';
+import { NavigateService } from 'src/helpers/navigate.service';
 
 @Component({
   selector: 'app-work',
@@ -12,25 +15,51 @@ export class WorkComponent implements OnInit {
 
   public projectList: project[] = [] as project[]
   public cat: selCategory = {} as selCategory 
+  public project: project = {} as project
   prevSel: string = 'Transportation'
+  index: number = 0
+  length: number = 1;
+
+  HOST = environment.HOST;
 
   constructor(
-    private dataService:DataService
+    private dataService:DataService,
+    private router: Router,
+    private naviagteService: NavigateService,
   ) { }
 
   ngOnInit(): void {
     this.cat.Transportation = true
-    document.getElementById('Transportation')?.classList.add('selected')
-    this.dataService.FireGET<projectList>(API.ProjectAll).subscribe({
-      next:(res) => {
-        for (let i = 0; i < res.results.length; i++) {
-          const ele = res.results[i];
-          this.projectList.push(ele);                    
-        }
+    this.select('Transportation')
+  }
+
+  goToProject(id: string) {
+    this.dataService.FireGET<project>(API.Project + '/' + id).subscribe({
+      next: (res) => {
+        this.naviagteService.sendPage(res);
       },
-      error:(e) => {console.log(e);
-      }
+      error: (e) => console.log(e),
+      complete: () => {
+        this.router.navigate(['/project']);
+      },
     })
+  }
+
+  changeProject(item: string) {
+    switch (item) {
+      case '-':
+        if (this.index > 0) {
+          this.index--;
+          this.project = this.projectList[this.index];
+        }
+        break;
+      case '+':
+        if (this.index < this.length - 1) {
+          this.index++;
+          this.project = this.projectList[this.index];
+        }
+        break;
+    }
   }
 
   select(category: string) {
@@ -79,17 +108,25 @@ export class WorkComponent implements OnInit {
 
   getProjects(category: string) {
     this.projectList = [] as project[]
+    this.index = 0
     this.dataService.FireGET<projectList>(API.ProjectAll).subscribe({
       next:(res) => {
-        console.log(res.results);
         for (let i = 0; i < res.results.length; i++) {
           const ele = res.results[i];
-          if (ele.category === category) {
+          if (ele.category.includes(category)) {
+            ele.short_image1 = this.HOST + ele.short_image1;
             this.projectList.push(ele);                    
           }
-        }
+        } 
+        if (this.projectList.length == 0){
+          return;
+        }       
       },
-      error:(e) => {console.log(e);
+      error:(e) => {console.log(e);},
+      complete:() => {
+        this.length = this.projectList.length;
+        this.project = this.projectList[0];
+        console.log(this.project);
       }
     })
   }

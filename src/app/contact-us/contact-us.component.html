@@ -9,18 +9,18 @@
         </div>
         <img class="grid" src="../../assets/contact/Grid.svg" alt="" srcset="">
     </div>
-    <div class="form">
+    <div class="form" id="contactForm">
         <div class="heading">Tell us about yourself</div>
         <div class="question">Name</div>
-        <input class="answer" placeholder="Enter your name">
+        <input class="answer" [(ngModel)]="emailFields.name" placeholder="Enter your name">
         <div class="question">Email</div>
-        <input class="answer" placeholder="Enter your email address">
+        <input class="answer" [(ngModel)]="emailFields.email" placeholder="Enter your email address">
         <div class="question">Company</div>
-        <input class="answer" placeholder="Enter your company name">
+        <input class="answer" [(ngModel)]="emailFields.company" placeholder="Enter your company name">
         <div class="question">Requirement</div>
-        <textarea class="answer-area" placeholder="Enter your requirements"></textarea>
+        <textarea class="answer-area" [(ngModel)]="emailFields.requirements" placeholder="Enter your requirements"></textarea>
         <div class="button">
-            <button class="submit">Submit</button>
+            <button class="submit" (click)="send()">Submit</button>
         </div>
 
     </div>

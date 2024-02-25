@@ -4,13 +4,15 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { HomeComponent } from './home/home.component';
 import { OurWorkComponent } from './our-work/our-work.component';
 import { ProjectsComponent } from './our-work/projects/projects.component';
+import { PrivacyComponent } from './privacy/privacy.component';
 
 const routes: Routes = [
   { path:'',redirectTo:'home',pathMatch:'full' },
   { path:'home', component:HomeComponent },
   { path:'work', component:OurWorkComponent },
   { path:'contact', component:ContactUsComponent },
-  { path:'project', component:ProjectsComponent }
+  { path:'project', component:ProjectsComponent },
+  { path: 'privacy', component:PrivacyComponent }
 ];
 
 @NgModule({

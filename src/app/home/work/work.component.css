@@ -35,7 +35,7 @@
     cursor: pointer;
 }
 .image {
-    width: 35vw;
+    width: 25vw;
     border-radius: 10px;
     box-shadow: 10px 10px #F0F0F0;
 }
@@ -128,6 +128,13 @@
         margin: 0.5em 0;
     }
 
+    .arrow-left, .arrow-right {
+        width: 5vw;
+        top: -18vw;        
+    }
+    .arrow-right {
+        left: -5vw;
+    }
     .content {
         flex-direction: column-reverse;
     }
@@ -137,5 +144,8 @@
     }
     .image {
         width: 80%;
+    }
+    .numb-normal {
+        margin-top: 5vw;
     }
 }

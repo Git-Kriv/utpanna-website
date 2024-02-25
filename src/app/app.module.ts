@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 import { DataService } from 'src/helpers/data.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +20,7 @@ import { WorkComponent } from './home/work/work.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { OurWorkComponent } from './our-work/our-work.component';
 import { ProjectsComponent } from './our-work/projects/projects.component';
+import { PrivacyComponent } from './privacy/privacy.component';
 
 @NgModule({
   declarations: [
@@ -37,11 +39,13 @@ import { ProjectsComponent } from './our-work/projects/projects.component';
     OurWorkComponent,
     ProjectsComponent,
     ContactComponent,
+    PrivacyComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [
     HttpClient,

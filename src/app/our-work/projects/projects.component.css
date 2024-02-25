@@ -22,6 +22,7 @@
 }
 .img-work {
     width: 90vw;
+    border-radius: 20px;
 }
 .info-flex {
     margin-top: 2em;
@@ -50,6 +51,7 @@
 .images img {
     width: 35vw;
     margin: 0 2.5vw;
+    border-radius: 10px;
 }  
 
 

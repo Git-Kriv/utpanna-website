@@ -22,7 +22,7 @@
                 <div class="product-info">{{p.context}}</div>
                 <div class="product-link" (click)="goToProject(p.id)">Find out more</div>
             </div>
-            <img class="product-img-right" src="http://192.168.0.104:8000{{p.short_image1}}" alt="">
+            <img class="product-img-right" src="{{p.short_image1}}" alt="">
         </div>
         <div class="product" *ngIf="i%2 != 0">
             <img class="product-img-left" src="{{p.short_image1}}" alt="">

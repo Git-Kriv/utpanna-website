@@ -3,17 +3,17 @@
     <div class="content">
         <div class="left-content">
             <div class="images">
-                <img class="arrow-left" src="../../../assets/arrows/left-dark.svg" alt="" srcset="">
+                <img class="arrow-left" (click)="changeProject('-')" src="../../../assets/arrows/left-dark.svg" alt="" srcset="">
                 <div class="img-container">
-                    <img class="image" src="../../../assets/Mask Group 2.png" alt="" srcset="">
-                    <div class="img-title">Branding</div>
-                    <div class="img-desc">Creating unparalleled User Experiences and Memories through design.</div>
-                    <div class="img-link">Find out more</div>
+                    <img class="image" src="{{project.short_image1}}" alt="" srcset="">
+                    <div class="img-title">{{project.category}}</div>
+                    <div class="img-desc">{{project.title}}</div>
+                    <div class="img-link" (click)="goToProject(project.id)">Find out more</div>
                 </div>
-                <img class="arrow-right" src="../../../assets/arrows/right-dark.svg" alt="" srcset="">
+                <img class="arrow-right" (click)="changeProject('+')" src="../../../assets/arrows/right-dark.svg" alt="" srcset="">
                 <div class="numb">
-                    <div class="numb-highlight">1/</div>
-                    <div class="numb-normal">1</div>
+                    <div class="numb-highlight">{{index+1}}/</div>
+                    <div class="numb-normal">{{length}}</div>
                 </div>
             </div>    
         </div>

@@ -27,8 +27,9 @@
 }
 
 .form {
+    top: 10vh;
     width: 30vw;
-    margin: 30px 15vw;
+    margin: 6em 15vw;
     padding: 2em 2em;
     box-shadow: 0px 3px 30px #00000008;
     border: 1px solid #E8E8E8;

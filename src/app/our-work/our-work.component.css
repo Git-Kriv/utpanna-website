@@ -133,8 +133,8 @@
     .content {
         width: 80vw;
     }
-    .product-img {
+    .product-img-right, .product-img-left {
         margin: 2em 0;
-        width: 75vw;
+        width: 80vw;
     }
 }

@@ -47,15 +47,17 @@ export class OurWorkComponent implements OnInit {
   }
 
   goToProject(id: string) {
-    this.dataService.FireGET<project>(API.Project + '/' + id).subscribe({
-      next: (res) => {
-        this.naviagteService.sendPage(res);
-      },
-      error: (e) => console.log(e),
-      complete: () => {
-        this.router.navigate(['/project']);
-      },
-    })
+    this.naviagteService.sendPage(id);
+    this.router.navigate(['/project']);
+    // this.dataService.FireGET<project>(API.Project + '/' + id).subscribe({
+    //   next: (res) => {
+    //     this.naviagteService.sendPage(res);
+    //   },
+    //   error: (e) => console.log(e),
+    //   complete: () => {
+    //     this.router.navigate(['/project']);
+    //   },
+    // })
   }
 
   filter(cat:string){
@@ -92,6 +94,7 @@ export class OurWorkComponent implements OnInit {
     this.dataService.FireGETP<project[]>(API.ProjectFilter, {category:cat}).subscribe({
       next:(res) => {
         for (let i = 0; i < res.length; i++) {
+          res[i].short_image1 = this.HOST + res[i].short_image1;
           this.projects.push(res[i]);
         }
       },

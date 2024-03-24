@@ -3,6 +3,7 @@
     background-color: var(--text-highlight);
     color: #fff;
     display: flex;
+    font-family: 'Poppins', sans-serif;
     flex-direction: column;
     justify-content: center;
     align-items: center;

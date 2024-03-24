@@ -34,15 +34,8 @@ export class WorkComponent implements OnInit {
   }
 
   goToProject(id: string) {
-    this.dataService.FireGET<project>(API.Project + '/' + id).subscribe({
-      next: (res) => {
-        this.naviagteService.sendPage(res);
-      },
-      error: (e) => console.log(e),
-      complete: () => {
-        this.router.navigate(['/project']);
-      },
-    })
+    this.naviagteService.sendPage(id);
+    this.router.navigate(['/project']);
   }
 
   changeProject(item: string) {

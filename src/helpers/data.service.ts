@@ -10,7 +10,9 @@ import {
 
 const HOST = environment.HOST;
 
-const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+const headers = new HttpHeaders()
+headers.append('Content-Type', 'application/json; charset=utf-8');
+
 @Injectable()
 export class DataService {
 

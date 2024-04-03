@@ -35,22 +35,17 @@ export class ProjectsComponent implements OnInit {
   }
 
   call(id:string){
-    console.log(id);
     this.dataService.FireGET<project>(API.Project + '/' + id).subscribe({
       next: (res) => {
         this.project = {} as project;
         this.project = res;},
-      error: (e) => console.log(e),
       complete: () => {
-        this.project.short_image1 = this.HOST + this.project.short_image1;
-        this.project.short_image2 = this.HOST + this.project.short_image2;
-        this.project.long_image1  = this.HOST + this.project.long_image1;
-        this.project.long_image2  = this.HOST + this.project.long_image2;
+        this.project.cover_image = this.HOST + this.project.cover_image;
+        this.project.detail_image = this.HOST + this.project.detail_image;
+        this.project.intro_image  = this.HOST + this.project.intro_image;
+        this.project.outro_image  = this.HOST + this.project.outro_image;
       },
-    })
-
-    console.log(this.project);
-    
+    })    
 
   }
 

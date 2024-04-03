@@ -34,7 +34,7 @@ export class ArticleComponent implements OnInit {
         this.article1 = this.articleList[0];
         this.article2 = this.articleList[1];
       },
-      error:(e) => console.log(e),
+      error:(e) => alert('Error getting articles!' + e.message),
     })
   }
 
@@ -52,19 +52,16 @@ export class ArticleComponent implements OnInit {
       if(this.index+1 == this.articleList.length){
         this.article2 = this.articleList[0];
       }
-      console.log(this.index, this.index+1);
     }
     else if(this.index == this.articleList.length-2){
       this.index = this.articleList.length-1;
       this.article1 = this.articleList[this.index];
       this.article2 = this.articleList[0];
-      console.log(this.index, 0);
     }
     else if(this.index == this.articleList.length-1){
       this.index = 0;
       this.article1 = this.articleList[this.index];
       this.article2 = this.articleList[this.index+1];  
-      console.log(this.index, this.index+1);    
     }
     setTimeout(() => {
       div?.classList.remove('fade');
@@ -78,19 +75,16 @@ export class ArticleComponent implements OnInit {
       this.index -= 2;
       this.article1 = this.articleList[this.index];
       this.article2 = this.articleList[this.index+1];
-      console.log(this.index, this.index+1);
     }
     else if(this.index == 1){
       this.index = this.articleList.length-1;
       this.article1 = this.articleList[this.index];
       this.article2 = this.articleList[0];
-      console.log(this.index, 0);
     }
     else if(this.index == 0){
       this.index = this.articleList.length-2;
       this.article1 = this.articleList[this.index];
       this.article2 = this.articleList[this.index+1];
-      console.log(this.index, this.index+1);
     }
     setTimeout(() => {
       div?.classList.remove('fade');

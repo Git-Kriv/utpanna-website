@@ -20,13 +20,10 @@ export class ContactUsComponent implements OnInit {
   }
 
   send(){
-    console.log(this.emailFields);
-    console.log(typeof(this.emailFields.name,this.emailFields.company,this.emailFields.email,this.emailFields.requirements));
-    
     this.dataService.FirePOST<emailFields>(API.Email, this.emailFields).subscribe({
-      error:(e) => console.log(e),
+      error:(e) => alert('Error sending mail!' +e.message),
       complete:() => {
-        console.log('complete')
+        alert('Mail sent successfully!')
         location.reload();
         Object.assign({}, this.emailFields)
       }

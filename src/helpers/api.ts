@@ -3,5 +3,6 @@ export const API = {
     ProjectAll:'/api/projects',
     Articles:'/api/articles',
     ProjectFilter:'/api/project-categories',
-    Email:'/api/send-email/'
+    Email:'/api/send-email/',
+    Clients:'/api/clients',
 }

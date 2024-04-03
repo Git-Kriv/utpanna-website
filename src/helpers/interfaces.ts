@@ -15,10 +15,10 @@ export class project {
     country!:string  
     context!:string  
     approach!:string
-    long_image1!:string
-    short_image1!:string
-    long_image2!:string
-    short_image2!:string   
+    intro_image!:string
+    cover_image!:string
+    outro_image!:string
+    detail_image!:string   
 }
 
 export class projectList {
@@ -42,4 +42,9 @@ export class selCategory {
     Branding: boolean = false
     Packaging: boolean = false
     UI: boolean = false
+}
+
+export class client {
+    id!:string
+    image!:string
 }

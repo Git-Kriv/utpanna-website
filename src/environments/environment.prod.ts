@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  HOST: 'https://web-production-4721.up.railway.app',
+  HOST: 'https://willing-roll-production.up.railway.app',
 };

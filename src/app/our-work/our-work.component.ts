@@ -35,14 +35,10 @@ export class OurWorkComponent implements OnInit {
       next:(res) => {
         this.nextPage++;        
         for (let i = 0; i < res.results.length; i++) {
-          res.results[i].short_image1 = this.HOST + res.results[i].short_image1;
+          res.results[i].cover_image = this.HOST + res.results[i].cover_image;
           this.projects.push(res.results[i]);
-        }
-        console.log(this.projects[0]);
-        
+        }        
       },
-      error:(e) => console.log(e),
-      complete:() => console.log('complete')
     })
   }
 
@@ -94,12 +90,10 @@ export class OurWorkComponent implements OnInit {
     this.dataService.FireGETP<project[]>(API.ProjectFilter, {category:cat}).subscribe({
       next:(res) => {
         for (let i = 0; i < res.length; i++) {
-          res[i].short_image1 = this.HOST + res[i].short_image1;
+          res[i].cover_image = this.HOST + res[i].cover_image;
           this.projects.push(res[i]);
         }
       },
-      error:(e) => console.log(e),
-      complete:() => console.log('complete')
     })
   }
 
@@ -111,8 +105,7 @@ export class OurWorkComponent implements OnInit {
           this.projects.push(res.results[i]);
         }
       },
-      error:(e) => console.log(e),
-      complete:() => console.log('complete')
+
     })
   }
 

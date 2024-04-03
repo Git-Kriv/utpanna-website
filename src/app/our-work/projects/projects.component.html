@@ -2,32 +2,26 @@
 <div class="container">
     <div class="title" autofocus="">{{project.category}}</div>
     <div class="head">{{project.title}}</div>
-    <img class="img-work" src="{{project.long_image1}}" alt="">
+    <img class="img-work" src="{{project.intro_image}}" alt="">
     <div class="info-flex">
         <div class="row">
            <div class="bold">Client</div>{{project.client}}
            <div style="left: 10vw;" class="bold">Service</div>{{project.service}}
-        </div>
-        <div class="row">
-            <div class="bold">Date</div>{{project.date | date: 'dd/MM/yyyy'}}
-            <div style="left: 10vw;" class="bold">Country</div>{{project.country}}
-        </div>
-        <div class="row">
-            <div class="bold">Duration</div>{{project.duration}}
+           <div class="bold">Duration</div>{{project.duration}}
         </div>
         <div class="row">
             <div class="bold">Context</div>{{project.context}}
         </div>
         <div class="images">
-            <img class="img" src="{{project.short_image1}}" alt="" srcset="">
-            <img class="img" src="{{project.short_image2}}" alt="" srcset="">
+            <img class="img" src="{{project.cover_image}}" alt="" srcset="">
+            <img class="img" src="{{project.detail_image}}" alt="" srcset="">
         </div>
         <div class="row">
             <div class="bold">Our Approach</div>{{project.approach}}
         </div>
     </div>
     
-    <img class="img-work" src="{{project.long_image2}}" alt="" srcset="">
+    <img class="img-work" src="{{project.outro_image}}" alt="" srcset="">
 </div>
 <app-contact></app-contact>
 <app-footer></app-footer>

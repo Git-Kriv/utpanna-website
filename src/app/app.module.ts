@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AboutUsComponent } from './home/about-us/about-us.component';
 import { ApproachComponent } from './home/approach/approach.component';
 import { ArticleComponent } from './home/article/article.component';
+import { ClientsComponent } from './home/clients/clients.component';
 import { ContactComponent } from './home/contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { LandingComponent } from './home/landing/landing.component';
@@ -40,6 +41,7 @@ import { PrivacyComponent } from './privacy/privacy.component';
     ProjectsComponent,
     ContactComponent,
     PrivacyComponent,
+    ClientsComponent,
   ],
   imports: [
     BrowserModule,

@@ -107,7 +107,7 @@ export class WorkComponent implements OnInit {
         for (let i = 0; i < res.results.length; i++) {
           const ele = res.results[i];
           if (ele.category.includes(category)) {
-            ele.short_image1 = this.HOST + ele.short_image1;
+            ele.cover_image = this.HOST + ele.cover_image;
             this.projectList.push(ele);                    
           }
         } 
@@ -115,11 +115,10 @@ export class WorkComponent implements OnInit {
           return;
         }       
       },
-      error:(e) => {console.log(e);},
+      error:(e) => alert('Error getting projects!' + e.message),
       complete:() => {
         this.length = this.projectList.length;
         this.project = this.projectList[0];
-        console.log(this.project);
       }
     })
   }

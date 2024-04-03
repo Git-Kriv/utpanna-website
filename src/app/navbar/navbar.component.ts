@@ -26,9 +26,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     
     if(innerWidth/innerHeight <1){
-      this.landscape = false;
-      console.log("landscape: ", this.landscape);
-      
+      this.landscape = false;      
     }
 
     var url = this.router.url;

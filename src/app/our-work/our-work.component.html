@@ -22,10 +22,10 @@
                 <div class="product-info">{{p.context}}</div>
                 <div class="product-link" (click)="goToProject(p.id)">Find out more</div>
             </div>
-            <img class="product-img-right" src="{{p.short_image1}}" alt="">
+            <img class="product-img-right" src="{{p.cover_image}}" alt="">
         </div>
         <div class="product" *ngIf="i%2 != 0">
-            <img class="product-img-left" src="{{p.short_image1}}" alt="">
+            <img class="product-img-left" src="{{p.cover_image}}" alt="">
             <div class="content">
                 <div class="product-title">{{p.category}}</div>
                 <div class="product-desc">{{p.title}}</div>

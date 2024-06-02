@@ -31,6 +31,7 @@ export class projectList {
 export class emailFields {
     name!:string
     email!:string
+    phone_number!:string
     company!:string
     requirements!:string
 }

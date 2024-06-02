@@ -34,7 +34,6 @@ export class ClientsComponent implements OnInit {
           else this.clientList2.push(ele);
         }
       },
-      error:(e) => alert('Error fetching data!' + e.message),
     })
   }
 

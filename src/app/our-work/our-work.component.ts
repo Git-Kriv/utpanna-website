@@ -15,6 +15,7 @@ export class OurWorkComponent implements OnInit {
 
   public projects:project[] = [] as project[];
   prevSel:string = 'All';
+  currCat:string = 'All';
   nextPage:number = 1;
 
   HOST = environment.HOST;
@@ -57,6 +58,7 @@ export class OurWorkComponent implements OnInit {
   }
 
   filter(cat:string){
+    this.currCat = cat;
     if (cat === this.prevSel) {
       return;
     }
@@ -84,8 +86,8 @@ export class OurWorkComponent implements OnInit {
         break;
     }
     document.getElementById(this.prevSel)?.classList.remove('selected');
-    document.getElementById(cat)?.classList.add('selected');
-    this.prevSel = cat;
+    document.getElementById(this.currCat)?.classList.add('selected');
+    this.prevSel = this.currCat;
     this.projects = [] as project[];
     this.dataService.FireGETP<project[]>(API.ProjectFilter, {category:cat}).subscribe({
       next:(res) => {
@@ -102,6 +104,7 @@ export class OurWorkComponent implements OnInit {
       next:(res) => {
         this.nextPage++;
         for (let i = 0; i < res.results.length; i++) {
+          res.results[i].cover_image = this.HOST + res.results[i].cover_image;
           this.projects.push(res.results[i]);
         }
       },

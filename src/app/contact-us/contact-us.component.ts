@@ -20,9 +20,11 @@ export class ContactUsComponent implements OnInit {
   }
 
   send(){
+    document.getElementById('submit-button')?.classList.add('disabled')
     this.dataService.FirePOST<emailFields>(API.Email, this.emailFields).subscribe({
       error:(e) => alert('Error sending mail!' +e.message),
       complete:() => {
+        document.getElementById('submit-button')?.classList.remove('disabled')
         alert('Mail sent successfully!')
         location.reload();
         Object.assign({}, this.emailFields)

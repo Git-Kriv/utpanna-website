@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { API } from 'src/helpers/api';
 import { DataService } from 'src/helpers/data.service';
-import { project, projectList, selCategory } from 'src/helpers/interfaces';
+import { project, selCategory } from 'src/helpers/interfaces';
 import { NavigateService } from 'src/helpers/navigate.service';
 
 @Component({
@@ -68,31 +68,37 @@ export class WorkComponent implements OnInit {
       case 'Transportation':
         this.cat.Transportation = !this.cat.Transportation
         document.getElementById('Transportation')?.classList.add('selected')
+        category = 'Transportation Design';
         this.getProjects(category)
         break;
       case 'Industrial':
         this.cat.Industrial = !this.cat.Industrial
         document.getElementById('Industrial')?.classList.add('selected')
+        category = 'Industrial Design';
         this.getProjects(category)
         break;
       case 'Retail':
         this.cat.Retail = !this.cat.Retail
         document.getElementById('Retail')?.classList.add('selected')
+        category = 'Retail Space Design';
         this.getProjects(category)
         break;
       case 'Branding':
         this.cat.Branding = !this.cat.Branding
         document.getElementById('Branding')?.classList.add('selected')
+        category = 'Branding and Identity Design';
         this.getProjects(category)
         break;
       case 'Packaging':
         this.cat.Packaging = !this.cat.Packaging
         document.getElementById('Packaging')?.classList.add('selected')
+        category = 'Packaging Design';
         this.getProjects(category)
         break;
       case 'UI':
         this.cat.UI = !this.cat.UI
         document.getElementById('UI')?.classList.add('selected')
+        category = 'UI/UX Design';
         this.getProjects(category)
         break;
     
@@ -102,20 +108,18 @@ export class WorkComponent implements OnInit {
   getProjects(category: string) {
     this.projectList = [] as project[]
     this.index = 0
-    this.dataService.FireGET<projectList>(API.ProjectAll).subscribe({
+    this.dataService.FireGETP<project[]>(API.ProjectFilter, {category:category}).subscribe({
       next:(res) => {
-        for (let i = 0; i < res.results.length; i++) {
-          const ele = res.results[i];
-          if (ele.category.includes(category)) {
-            ele.cover_image = this.HOST + ele.cover_image;
-            this.projectList.push(ele);                    
-          }
+        for (let i = 0; i < res.length; i++) {
+          const ele = res[i];
+          ele.cover_image = this.HOST + ele.cover_image;
+          this.projectList.push(ele);                    
+          
         } 
         if (this.projectList.length == 0){
           return;
         }       
       },
-      error:(e) => alert('Error getting projects!' + e.message),
       complete:() => {
         this.length = this.projectList.length;
         this.project = this.projectList[0];

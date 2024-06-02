@@ -47,7 +47,8 @@
     justify-content: space-between;
 }
 .card {
-    width: 15vw;
+    width: 25vw;
+    word-break: break-word;
 }
 .card-image {
     height: 10vh;
@@ -60,7 +61,7 @@
     color: var(--heading);
 }
 .card-body {
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-family: 'Poppins';
     font-weight: 400;
     color: var(--text-grey);

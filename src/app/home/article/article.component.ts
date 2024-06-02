@@ -34,7 +34,6 @@ export class ArticleComponent implements OnInit {
         this.article1 = this.articleList[0];
         this.article2 = this.articleList[1];
       },
-      error:(e) => alert('Error getting articles!' + e.message),
     })
   }
 

@@ -19,8 +19,8 @@
 .card {
     width: 15vw;
 }
-.card-image {
-    height: 10vh;
+.card-img {
+    height: 7.5em;
 }
 .card-head {
     margin: 4vh 0 2vh 0;

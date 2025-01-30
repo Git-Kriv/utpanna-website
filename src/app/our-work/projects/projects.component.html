@@ -1,8 +1,8 @@
 <app-navbar></app-navbar>
-<div class="container">
+<div *ngIf="!loading" class="container">
     <div class="title" autofocus="">{{project.category}}</div>
     <div class="head">{{project.title}}</div>
-    <img class="img-work" src="{{project.intro_image}}" alt="">
+    <img class="img-work" src="{{project.intro_image}}" alt="img">
     <div class="info-flex">
         <div class="row">
            <div class="bold">Client</div>{{project.client}}
@@ -13,15 +13,16 @@
             <div class="bold">Context</div>{{project.context}}
         </div>
         <div class="images">
-            <img class="img" src="{{project.cover_image}}" alt="" srcset="">
-            <img class="img" src="{{project.detail_image}}" alt="" srcset="">
+            <img class="img" src="{{project.cover_image}}" alt="img" srcset="">
+            <img class="img" src="{{project.detail_image}}" alt="img" srcset="">
         </div>
         <div class="row">
             <div class="bold">Our Approach</div>{{project.approach}}
         </div>
     </div>
     
-    <img class="img-work" src="{{project.outro_image}}" alt="" srcset="">
+    <img class="img-work" src="{{project.outro_image}}" alt="img" srcset="">
 </div>
 <app-contact></app-contact>
 <app-footer></app-footer>
+<app-loader *ngIf="loading"></app-loader>

@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { environment } from 'src/environments/environment';
-import { API } from 'src/helpers/api';
-import { DataService } from 'src/helpers/data.service';
-import { project, projectList } from 'src/helpers/interfaces';
-import { NavigateService } from 'src/helpers/navigate.service';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {environment} from 'src/environments/environment';
+import {API} from 'src/helpers/api';
+import {DataService} from 'src/helpers/data.service';
+import {project, projectList} from 'src/helpers/interfaces';
+import {NavigateService} from 'src/helpers/navigate.service';
 
 @Component({
   selector: 'app-our-work',
@@ -12,6 +12,7 @@ import { NavigateService } from 'src/helpers/navigate.service';
   styleUrls: ['./our-work.component.css']
 })
 export class OurWorkComponent implements OnInit {
+  loading:boolean = true;
 
   public projects:project[] = [] as project[];
   prevSel:string = 'All';
@@ -34,6 +35,7 @@ export class OurWorkComponent implements OnInit {
     document.getElementById('All')?.classList.add('selected');
     this.dataService.FireGET<projectList>(API.ProjectAll).subscribe({
       next:(res) => {
+        this.loading = false;
         this.nextPage++;        
         for (let i = 0; i < res.results.length; i++) {
           res.results[i].cover_image = this.HOST + res.results[i].cover_image;
@@ -62,6 +64,7 @@ export class OurWorkComponent implements OnInit {
     if (cat === this.prevSel) {
       return;
     }
+    this.loading = true;
     switch (cat) {
       case 'All':
         this.populate();
@@ -91,6 +94,7 @@ export class OurWorkComponent implements OnInit {
     this.projects = [] as project[];
     this.dataService.FireGETP<project[]>(API.ProjectFilter, {category:cat}).subscribe({
       next:(res) => {
+        this.loading = false;
         for (let i = 0; i < res.length; i++) {
           res[i].cover_image = this.HOST + res[i].cover_image;
           this.projects.push(res[i]);

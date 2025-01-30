@@ -61,5 +61,11 @@
         width: 80vw;
         font-size: 2em;
     }
-    
+    .row {
+        flex-direction: column;
+        margin-left: 5vw;
+    }
+    .bold {
+        margin: 0 0;
+    }
 }

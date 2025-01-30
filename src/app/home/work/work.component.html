@@ -3,14 +3,14 @@
     <div class="content">
         <div class="left-content">
             <div class="images">
-                <img class="arrow-left" (click)="changeProject('-')" src="../../../assets/arrows/left-dark.svg" alt="" srcset="">
+                <img class="arrow-left" (click)="changeProject('-')" src="../../../assets/arrows/left-dark.svg" alt="arrow" srcset="">
                 <div class="img-container">
-                    <img class="image" src="{{project.cover_image}}" alt="" srcset="">
+                    <img class="image" src="{{project.cover_image}}" alt="img" srcset="">
                     <div class="img-title">{{project.category}}</div>
                     <div class="img-desc">{{project.title}}</div>
                     <div class="img-link" (click)="goToProject(project.id)">Find out more</div>
                 </div>
-                <img class="arrow-right" (click)="changeProject('+')" src="../../../assets/arrows/right-dark.svg" alt="" srcset="">
+                <img class="arrow-right" (click)="changeProject('+')" src="../../../assets/arrows/right-dark.svg" alt="arrow" srcset="">
                 <div class="numb">
                     <div class="numb-highlight">{{index+1}}/</div>
                     <div class="numb-normal">{{length}}</div>
@@ -23,42 +23,42 @@
                 <div id="Transportation" class="item-text">
                     Transportation design
                 </div>
-                <img *ngIf="cat.Transportation" class="sel-circle" src="../../../assets/arrows/circle.svg" alt="">
+                <img *ngIf="cat.Transportation" class="sel-circle" src="../../../assets/arrows/circle.svg" alt="transportation">
                 <div *ngIf="!cat.Transportation" class="circle"></div>
             </div>
             <div class="menu-item" (click)="select('Industrial')">
                 <div id="Industrial" class="item-text">
                     Industrial design
                </div>
-               <img *ngIf="cat.Industrial" class="sel-circle" src="../../../assets/arrows/circle.svg" alt="">
+               <img *ngIf="cat.Industrial" class="sel-circle" src="../../../assets/arrows/circle.svg" alt="industrial">
                <div *ngIf="!cat.Industrial" class="circle"></div>
             </div>
             <div class="menu-item" (click)="select('Retail')">
                 <div id="Retail" class="item-text">
                     Retail space design
                 </div>
-                <img *ngIf="cat.Retail" class="sel-circle" src="../../../assets/arrows/circle.svg" alt="">
+                <img *ngIf="cat.Retail" class="sel-circle" src="../../../assets/arrows/circle.svg" alt="retail">
                 <div *ngIf="!cat.Retail" class="circle"></div>
             </div>
             <div class="menu-item" (click)="select('Branding')">
                 <div id="Branding" class="item-text">
                     Branding & Identity design
                 </div>
-                <img *ngIf="cat.Branding" class="sel-circle" src="../../../assets/arrows/circle.svg" alt="">
+                <img *ngIf="cat.Branding" class="sel-circle" src="../../../assets/arrows/circle.svg" alt="branding">
                 <div *ngIf="!cat.Branding" class="circle"></div>
             </div>
             <div class="menu-item" (click)="select('Packaging')">
                 <div id="Packaging" class="item-text">
                     Packaging design
                 </div>
-                <img *ngIf="cat.Packaging" class="sel-circle" src="../../../assets/arrows/circle.svg" alt="">
+                <img *ngIf="cat.Packaging" class="sel-circle" src="../../../assets/arrows/circle.svg" alt="packaging">
                 <div *ngIf="!cat.Packaging" class="circle"></div>
             </div>
             <div class="menu-item" (click)="select('UI')">
                 <div id="UI" class="item-text">
                     UI/UX design
                </div>
-               <img *ngIf="cat.UI" class="sel-circle" src="../../../assets/arrows/circle.svg" alt="">
+               <img *ngIf="cat.UI" class="sel-circle" src="../../../assets/arrows/circle.svg" alt="ui">
                <div *ngIf="!cat.UI" class="circle"></div>
             </div>
         </div>

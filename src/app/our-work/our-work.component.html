@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
-<div class="container">
+<div *ngIf="!loading" class="container">
     <div class="heading" autofocus="">Our Work</div>
     <div class="desc">
         From scaling startups to established enterprise, we help product teams tackle their most complex UX challenges
@@ -22,10 +22,10 @@
                 <div class="product-info">{{p.context}}</div>
                 <div class="product-link" (click)="goToProject(p.id)">Find out more</div>
             </div>
-            <img class="product-img-right" src="{{p.cover_image}}" alt="">
+            <img class="product-img-right" src="{{p.cover_image}}" alt="product">
         </div>
         <div class="product" *ngIf="i%2 != 0">
-            <img class="product-img-left" src="{{p.cover_image}}" alt="">
+            <img class="product-img-left" src="{{p.cover_image}}" alt="product">
             <div class="content">
                 <div class="product-title">{{p.category}}</div>
                 <div class="product-desc">{{p.title}}</div>
@@ -40,3 +40,4 @@
 </div>
 <app-contact></app-contact>
 <app-footer></app-footer>
+<app-loader *ngIf="loading"></app-loader>

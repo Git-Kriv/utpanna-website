@@ -22,6 +22,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { OurWorkComponent } from './our-work/our-work.component';
 import { ProjectsComponent } from './our-work/projects/projects.component';
 import { PrivacyComponent } from './privacy/privacy.component';
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { PrivacyComponent } from './privacy/privacy.component';
     ContactComponent,
     PrivacyComponent,
     ClientsComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,

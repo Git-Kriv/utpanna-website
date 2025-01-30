@@ -1,0 +1,10 @@
+User-agent: *
+
+Allow: /home
+Allow: /work
+Allow: /contact
+Allow: /privacy
+
+Disallow: /project
+
+Sitemap: https://utpannadesignworks.com/sitemap.xml
